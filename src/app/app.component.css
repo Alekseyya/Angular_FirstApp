@@ -1,0 +1,13 @@
+/* #hello{
+    background-color: black;
+} */
+
+.verdanaFont{
+    font-size:25px; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: green;
+}
+
+.list-clients{
+    list-style: none;
+}
