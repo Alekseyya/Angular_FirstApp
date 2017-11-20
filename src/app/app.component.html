@@ -12,14 +12,14 @@
     <div class="form-inline">
         <form [formGroup]="myForm" novalidate (ngSubmit)="Submit()">
             <div class="form-group">
-                <label>Имя</label>
+                <label>FirstName</label>
                 <input class="form-control"  formControlName="firstName"/>
                 <div class="alert alert-danger" *ngIf="myForm.controls['firstName'].invalid && myForm.controls['firstName'].touched">
                     Invalid FirstName
                 </div>
             </div>
             <div class="form-group">
-                <label>Фамилия</label>
+                <label>LastName</label>
                 <input class="form-control"  formControlName="lastName" />
                 <div class="alert alert-danger" *ngIf="myForm.controls['lastName'].invalid && myForm.controls['lastName'].touched">
                     Invalid LastName
@@ -36,8 +36,8 @@
   <div class="myList">
       <ul class="list-style list-clients">
           <li *ngFor="let client of clients" class="row list-clients-item">
-            <div class="col-md-1 list-clients__item-firstname">{{client.FirstName}}</div>
-            <div class="col-md-1 list-clients__item-lastname">{{client.LastName}}</div>
+            <div class="col-md-1 list-clients__item-firstname" [ngStyle]="{ 'background-color': client.color}">{{client.FirstName}}</div>
+            <div class="col-md-1 list-clients__item-lastname" [ngStyle]="{ 'background-color': client.color}" >{{client.LastName}}</div>
             <span class="col-md-1 glyphicon glyphicon-tint" (click)="ChangeColor(client)"></span>
             <span class="col-md-1 glyphicon glyphicon-remove " (click)="DeleteClient(client)"></span>
            </li>

@@ -66,17 +66,8 @@ export class AppComponent  implements OnInit{
     var colorG = Math.floor((Math.random() * 255));
     var colorB = Math.floor((Math.random() * 255));
     var color = "rgb("+ colorR + ","+ colorG + "," + colorB + ")";
+    client.color = color;  
 
-    var liClients = document.querySelectorAll("ul>li");
-
-    for (let li = 0; li < liClients.length; li++) {
-      var clientFirstName = liClients[li].getElementsByClassName('list-clients__item-firstname')[0].innerHTML;
-      var clientLastName = liClients[li].getElementsByClassName('list-clients__item-lastname')[0].innerHTML;
-      if (clientFirstName == client.FirstName && clientLastName == client.LastName) {
-        liClients[li].getElementsByClassName('list-clients__item-firstname')[0].style.backgroundColor = color;
-        liClients[li].getElementsByClassName('list-clients__item-lastname')[0].style.backgroundColor = color;
-      }
-    }  
   }
 
   DeleteClient(client: Client): void{
@@ -100,6 +91,7 @@ export class AppComponent  implements OnInit{
 }
 
 export class Client{
+  color: string;
   FirstName: string;
   LastName: string;     
   
